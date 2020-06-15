@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+	<title>Information</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+
+<body>
+
+	<nav>
+
+		<div class="logo">
+			<h4><a class="logotext" href="../../index.html">Tic-Tac-Toe</a></h4>
+		</div>
+
+		<ul class="nav-links">
+		  <li><a class="links-hover" href="../../index.html" disabled>Home</a></li>
+			<li><a class="links-hover" href="play.html">Play</a></li>
+			<li class="active dropdown">
+				<a class="links-hover dropbtn" href="information.html">Information</a>
+				<div class="dropdown-content">
+      		<a href="history.html">History</a>
+      		<a href="strategy.html" class="active">Strategy</a>
+      		<a href="variatons.html">Variatons</a>
+    		</div>
+			</li>
+			<li><a class="links-hover" href="about.html">About</a></li>
+		</ul>
+		<!--navbar for mobile-->
+		<div class="mobile">
+			<div class="lines"></div>
+			<div class="lines"></div>
+			<div class="lines"></div>
+		</div>
+	</nav>
+	<!--main content-->
+	<div id="banner-container3">
+		<div id="inner-container3">
+			<h1>Tic-Tac-Toe: Strategy</h1>
+			<p>A player can play a perfect game of tic-tac-toe (to win or at least, draw) if each time it is their turn to play, they choose the first available move from the following list, as used in Newell and Simon's 1972 tic-tac-toe program.
+			<br>
+			1. Win: If the player has two in a row, they can place a third to get three in a row.<br>
+			2. Block: If the opponent has two in a row, the player must play the third themselves to block the opponent.<br>
+			3. Fork: Create an opportunity where the player has two ways to win (two non-blocked lines of 2).<br>
+			4. Blocking an opponent's fork: If there is only one possible fork for the opponent, the player should block it. Otherwise, the player should block all forks in any way that simultaneously allows them to create two in a row. Otherwise, the player should create a two in a row to force the opponent into defending, as long as it doesn't result in them creating a fork. For example, if "X" has two opposite corners and "O" has the center, "O" must not play a corner in order to win. (Playing a corner in this scenario creates a fork for "X" to win.)<br>
+			5. Center: A player marks the center. (If it is the first move of the game, playing on a corner gives the second player more opportunities to make a mistake and may therefore be the better choice; however, it makes no difference between perfect players.)<br>
+			6. Opposite corner: If the opponent is in the corner, the player plays the opposite corner.<br>
+			7. Empty corner: The player plays in a corner square.<br>
+			8. Empty side: The player plays in a middle square on any of the 4 sides.<br>
+			<br><br>
+			The first player, who shall be designated "X", has 3 possible positions to mark during the first turn. Superficially, it might seem that there are 9 possible positions, corresponding to the 9 squares in the grid. However, by rotating the board, we will find that in the first turn, every corner mark is strategically equivalent to every other corner mark. The same is true of every edge (side middle) mark. For strategy purposes, there are therefore only three possible first marks: corner, edge, or center. Player X can win or force a draw from any of these starting marks; however, playing the corner gives the opponent the smallest choice of squares which must be played to avoid losing. This might suggest that the corner is the best opening move for X, however another study shows that if the players are not perfect, an opening move in the center is best for X.
+			<br><br>
+			The second player, who shall be designated "O", must respond to X's opening mark in such a way as to avoid the forced win. Player O must always respond to a corner opening with a center mark, and to a center opening with a corner mark. An edge opening must be answered either with a center mark, a corner mark next to the X, or an edge mark opposite the X. Any other responses will allow X to force the win. Once the opening is completed, O's task is to follow the above list of priorities in order to force the draw, or else to gain a win if X makes a weak play.
+			<br><br>
+			More detailed, to guarantee a draw, O should adopt the following strategies:
+			<br><br>
+			-If X plays corner opening move, O should take center, and then an edge, forcing X to block in the next move. This will stop any forks from happening. When both X and O are perfect players and X chooses to start by marking a corner, O takes the center, and X takes the corner opposite the original. In that case, O is free to choose any edge as its second move. However, if X is not a perfect player and has played a corner and then an edge, O should not play the opposite edge as its second move, because then X is not forced to block in the next move and can fork.
+			-If X plays edge opening move, O should take center or one of the corners adjacent to X, and then follow the above list of priorities, mainly paying attention to block forks.
+			-If X plays center opening move, O should take corner, and then follow the above list of priorities, mainly paying attention to block forks.
+			<br>
+			When X plays corner first, and O is not a perfect player, the following may happen:
+			<br>
+			-If O responds with a center mark (best move for them), a perfect X player will take the corner opposite the original. Then O should play an edge. However, if O plays a corner as its second move, a perfect X player will mark the remaining corner, blocking O's 3-in-a-row and making their own fork.
+			-If O responds with a corner mark, X is guaranteed to win, by simply taking any of the other two corners and then the last, a fork. (since when X takes the third corner, O can only take the position between the two X's. Then X can take the only remaining corner to win)
+			-If O responds with an edge mark, X is guaranteed to win, by taking center, then O can only take the corner opposite the corner which X plays first. Finally, X can take a corner to create a fork and then X will win on the next move.
+			</p>
+		</div>
+	</div>
+
+	
+	<!--footer-->
+	<footer>
+		<section>
+			<p id="left">Contact: ivanovskigligor@gmail.com</p>
+    	<p id="right">Gligor Ivanovski, Copyright &copy; 2020</p>
+    </section>
+  	<section>
+  		<br>
+  		<div class="sitemap">
+	  		<h2><a href="../../index.html">Home</a></h2>
+	  	</div>
+	  	<div class="sitemap">
+	  		<h2><a href="play.html">Play</a></h2>
+	  	</div>
+	  	<div class="sitemap">
+	  		<h2><a href="information.html">Information: </a></h2>
+	  		<ul>
+	  			<li><a href="history.html">- History</a></li>
+	  			<li><a href="strategy.html">- Strategy</a></li>
+	  			<li><a href="variatons.html">- Variations</a></li>
+	  		</ul>
+	  	</div>
+	  	<div class="sitemap">
+	  		<h2><a href="about.html">About</a></h2>
+	  	</div>
+	  	</section>
+	</footer> 
+
+
+	<script src="../javascript/navbaranimation.js" type="text/javascript"></script>
+</body>
+</html>
